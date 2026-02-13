@@ -4,7 +4,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { useInView } from "framer-motion";
 import { ScrollTextAnimation } from "./ScrollTextAnimation";
 import { AngledSlider } from "./AngledSlider";
-import { Palette, Code, Target } from "lucide-react";
+import { Palette, Code, Target, ArrowRight } from "lucide-react";
 
 const ServicesSection = () => {
     const sectionRef = useRef(null);
@@ -74,6 +74,14 @@ const ServicesSection = () => {
                         hoverScale={1.08}
                         className="w-full"
                     />
+                    
+                    {/* View Our Work Button */}
+                    <div className="relative z-10 flex justify-center py-20">
+                        <button className="group relative inline-flex items-center gap-3 bg-gray-900 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-black hover:scale-105 hover:shadow-xl">
+                            View Our Work
+                            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                        </button>
+                    </div>
                 </div>
             )}
         </section>
