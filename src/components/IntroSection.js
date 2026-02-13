@@ -1,58 +1,66 @@
 "use client";
 
 import React from "react";
-import ScrollReveal from "./ScrollReveal";
+import ScrollCarousel from "./ScrollCarousel";
+import { Cpu, Palette, Globe, Layers, Zap, Heart } from "lucide-react";
+
+// Feature data for the carousel
+const features = [
+    {
+        icon: Cpu,
+        title: "Technology",
+        description: "Seamless digital experiences that empower your lifestyle.",
+        image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        icon: Palette,
+        title: "Design",
+        description: "Purposeful aesthetics that inspire and captivate.",
+        image: "https://images.pexels.com/photos/1762851/pexels-photo-1762851.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        icon: Globe,
+        title: "Culture",
+        description: "Connecting global communities through shared passions.",
+        image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        icon: Layers,
+        title: "Innovation",
+        description: "Breaking boundaries with forward-thinking solutions.",
+        image: "https://images.pexels.com/photos/3862632/pexels-photo-3862632.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        icon: Zap,
+        title: "Energy",
+        description: "Fueling creativity with dynamic and bold ideas.",
+        image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        icon: Heart,
+        title: "Connection",
+        description: "Building meaningful relationships that last.",
+        image: "https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+];
 
 const IntroSection = () => {
     return (
-        <section className="relative w-full min-h-screen flex flex-col items-center justify-center p-8 bg-white text-black overflow-hidden z-20">
-            <div className="max-w-4xl mx-auto space-y-12">
-
-                {/* Title */}
-                <ScrollReveal
-                    size="2xl"
-                    align="center"
-                    containerClassName="mb-12"
-                    textClassName="font-bold tracking-tight bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent"
-                >
-                    Your Gateway to Modern Living
-                </ScrollReveal>
-
-                {/* Content Paragraph 1 */}
-                <ScrollReveal
-                    size="xl"
-                    align="center"
-                    baseOpacity={0.2}
-                    staggerDelay={0.03}
-                    textClassName="text-gray-800 font-medium leading-relaxed"
-                >
-                    Urban Hub is a creative lifestyle platform that blends technology, design, and culture into one seamless digital experience.
-                </ScrollReveal>
-
-                {/* Content Paragraph 2 */}
-                <ScrollReveal
-                    size="lg"
-                    align="center"
-                    baseOpacity={0.2}
-                    staggerDelay={0.03}
-                    textClassName="text-gray-600 font-normal mt-8"
-                >
-                    We believe in crafting environments — both physical and digital — that inspire movement, creativity, and connection.
-                </ScrollReveal>
-
-                {/* Content Paragraph 3 */}
-                <ScrollReveal
-                    size="lg"
-                    align="center"
-                    baseOpacity={0.2}
-                    staggerDelay={0.03}
-                    textClassName="text-gray-600 font-normal mt-4"
-                >
-                    Whether you're exploring innovative ideas or looking for inspiration, Urban Hub is where modern energy meets bold imagination.
-                </ScrollReveal>
-
+        <div className="relative w-full bg-white z-20">
+            <div className="py-20 text-center">
+                <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6">
+                    Explore Our World
+                </h2>
+                <p className="max-w-2xl mx-auto text-xl text-gray-600">
+                    Swipe through the pilars of our community.
+                </p>
             </div>
-        </section>
+
+            <ScrollCarousel
+                features={features}
+                className="w-full"
+            />
+        </div>
     );
 };
 

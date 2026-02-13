@@ -2,6 +2,7 @@ import './App.css';
 import { Skiper39 } from './components/CrowdCanvas';
 import MorphingNavigation from './components/MorphingNavigation';
 import IntroSection from './components/IntroSection';
+import AboutSection from './components/AboutSection';
 
 function App() {
   const navLinks = [
@@ -12,7 +13,7 @@ function App() {
   ];
 
   return (
-    <div className="App relative w-full h-screen overflow-y-auto overflow-x-hidden bg-white scroll-smooth">
+    <div className="App relative w-full min-h-screen bg-white overflow-x-hidden scroll-smooth">
       <MorphingNavigation
         links={navLinks}
         theme="glass"
@@ -24,8 +25,13 @@ function App() {
       </div>
 
       {/* Intro Section */}
-      <div id="about" className="relative w-full bg-white z-20">
+      <div className="relative w-full bg-white z-20">
         <IntroSection />
+      </div>
+
+      {/* About Section */}
+      <div id="about" className="relative w-full bg-gray-50 z-20">
+        <AboutSection />
       </div>
     </div>
   );
