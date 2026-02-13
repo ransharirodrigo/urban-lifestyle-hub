@@ -3,11 +3,14 @@
 import React from "react";
 import ScrollReveal from "./ScrollReveal";
 import { MaskText } from "./MaskText";
+import GravityStarsBackground from "./GravityStarsBackground";
 
 const AboutSection = () => {
     return (
         <section className="relative w-full min-h-screen flex flex-col items-center justify-center p-8 bg-gray-50 text-gray-900 overflow-hidden z-20">
-            <div className="max-w-4xl mx-auto space-y-24 text-center">
+            <GravityStarsBackground className="absolute inset-0 z-0" starCount={120} starSize={1.5} />
+
+            <div className="relative max-w-4xl mx-auto space-y-24 text-center z-10">
 
                 {/* Title - Masked Reveal */}
                 <div className="flex justify-center">
