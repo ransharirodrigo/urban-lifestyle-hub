@@ -13,7 +13,7 @@ const AboutSection = () => {
             <div className="relative max-w-4xl mx-auto space-y-24 text-center z-10">
 
                 {/* Title - Masked Reveal */}
-                <div className="flex justify-center">
+                <div className="flex justify-center mt-16">
                     <MaskText
                         className="text-6xl md:text-8xl font-extrabold tracking-tighter text-gray-900 leading-none"
                         duration={0.9}
