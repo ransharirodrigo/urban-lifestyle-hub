@@ -176,7 +176,7 @@ export const MorphingNavigation = ({
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0 }}
                                     transition={{ delay: i * 0.1 }}
-                                    className="px-5 py-2.5 text-sm font-bold tracking-wide cursor-pointer hover:text-blue-500 transition-colors"
+                                    className="px-5 py-2.5 text-sm font-bold tracking-wide cursor-pointer hover:text-[#ff5800] transition-colors"
                                 >
                                     {link.icon && <span className="mr-2 inline-block">{link.icon}</span>}
                                     {link.label}
@@ -234,7 +234,7 @@ export const MorphingNavigation = ({
                                         key={link.id}
                                         href={link.href}
                                         onClick={(e) => handleLinkClick(link, e)}
-                                        className="font-bold text-lg tracking-wide hover:scale-105 transition-transform cursor-pointer"
+                                        className="font-bold text-lg tracking-wide hover:text-[#ff5800] hover:scale-105 transition-all cursor-pointer"
                                     >
                                         {link.icon && <span className="inline-block mr-3">{link.icon}</span>}
                                         {link.label}

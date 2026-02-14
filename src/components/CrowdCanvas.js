@@ -117,6 +117,7 @@ const CrowdCanvas = ({ src, rows = 15, cols = 7 }) => {
           ctx.save();
           ctx.translate(peep.x, peep.y);
           ctx.scale(peep.scaleX, 1);
+          ctx.globalAlpha = 0.6; // Add opacity to make peeps faded
           ctx.drawImage(
             peep.image,
             peep.rect[0],

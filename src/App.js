@@ -4,6 +4,8 @@ import MorphingNavigation from './components/MorphingNavigation';
 import IntroSection from './components/IntroSection';
 import AboutSection from './components/AboutSection';
 import ServicesSection from './components/ServicesSection';
+import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
 import { useEffect } from 'react';
 import Lenis from '@studio-freight/lenis';
 
@@ -66,6 +68,14 @@ function App() {
       <div id="services" className="relative w-full bg-white z-20">
         <ServicesSection />
       </div>
+
+      {/* Contact Section */}
+      <div id="contact" className="relative w-full bg-gray-50 z-20">
+        <ContactSection />
+      </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
