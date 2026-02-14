@@ -8,23 +8,16 @@ import { Palette, Code, Target, ArrowRight } from "lucide-react";
 
 const ServicesSection = () => {
     const sectionRef = useRef(null);
+    const sliderRef = useRef(null);
     const isInView = useInView(sectionRef, { 
-        amount: 0.3, 
+        amount: 0.2, 
         once: true 
     });
     
-    const [showSlider, setShowSlider] = useState(false);
-    const headingAnimationDuration = 3000; // 3 seconds for heading animation
-
-    useEffect(() => {
-        if (isInView) {
-            const timer = setTimeout(() => {
-                setShowSlider(true);
-            }, headingAnimationDuration);
-
-            return () => clearTimeout(timer);
-        }
-    }, [isInView]);
+    const isSliderInView = useInView(sliderRef, {
+        amount: 0.1,
+        once: true
+    });
 
     // Service data with icons
     const services = [
@@ -60,30 +53,36 @@ const ServicesSection = () => {
                 )}
             </div>
 
-            {/* Second part: Angled slider that appears after heading animation */}
-            {showSlider && (
-                <div className="relative w-full bg-gray-50 py-20">
-                    <AngledSlider 
-                        items={services}
-                        speed={30}
-                        direction="left"
-                        containerHeight="400px"
-                        cardWidth="350px"
-                        gap="40px"
-                        angle={25}
-                        hoverScale={1.08}
-                        className="w-full"
-                    />
-                    
-                    {/* View Our Work Button */}
-                    <div className="relative z-10 flex justify-center py-20">
-                        <button className="group relative inline-flex items-center gap-3 bg-gray-900 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-black hover:scale-105 hover:shadow-xl">
-                            View Our Work
-                            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-                        </button>
-                    </div>
+            {/* Second part: Angled slider - always rendered for visibility */}
+            <div 
+                ref={sliderRef}
+                className="relative w-full bg-gray-50 py-20"
+                style={{
+                    opacity: isSliderInView ? 1 : 0.3,
+                    transform: isSliderInView ? 'translateY(0)' : 'translateY(20px)',
+                    transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+                }}
+            >
+                <AngledSlider 
+                    items={services}
+                    speed={30}
+                    direction="left"
+                    containerHeight="400px"
+                    cardWidth="350px"
+                    gap="40px"
+                    angle={25}
+                    hoverScale={1.08}
+                    className="w-full"
+                />
+                
+                {/* View Our Work Button */}
+                <div className="relative z-10 flex justify-center py-20">
+                    <button className="group relative inline-flex items-center gap-3 bg-gray-900 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-black hover:scale-105 hover:shadow-xl">
+                        View Our Work
+                        <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                    </button>
                 </div>
-            )}
+            </div>
         </section>
     );
 };
