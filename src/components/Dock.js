@@ -7,7 +7,6 @@ import {
   useSpring,
   useTransform,
   AnimatePresence,
-  MotionValue,
 } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 
